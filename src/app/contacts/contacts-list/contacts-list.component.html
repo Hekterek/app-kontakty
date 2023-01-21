@@ -1,4 +1,8 @@
-<table class="table table-striped">
+<app-header>
+    <span content>Lista wszystkich kontaktow</span>
+</app-header>
+
+<table *ngIf="contacts.length > 0; else noContactsAlert" class="table table-striped">
 
     <thead>
         <tr>
@@ -19,3 +23,9 @@
     </tbody>
 
 </table>
+
+<ng-template #noContactsAlert>
+    <p class="no-contacts">
+        Aktualnie Brak Kontaktow
+    </p>
+</ng-template>
