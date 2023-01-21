@@ -1,0 +1,21 @@
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Lp</th>
+            <th>Nazwisko</th>
+            <th>Imie</th>
+            <th>Nr telefonu</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let contact of contacts; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ contact.surname }}</td>
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.phoneNumber }}</td>
+        </tr>
+    </tbody>
+
+</table>
