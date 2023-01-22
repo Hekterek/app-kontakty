@@ -18,7 +18,8 @@
 </form>
 
 <button [routerLink]="['/contacts']" mat-button color="primary">Wstecz</button>
-<button mat-button color="accent">Zapisz</button>
+<button (click)="contactForm.reset()" mat-button color="accent">Wyczysc</button>
+<button (click)="addContact()" [disabled]="contactForm.invalid" mat-button color="accent">Zapisz</button>
 
 <pre>{{ contactForm.value | json }}</pre>
 <pre>{{ contactForm.status | json }}</pre>
