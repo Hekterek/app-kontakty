@@ -10,6 +10,7 @@
             <th>Nazwisko</th>
             <th>Imie</th>
             <th>Nr telefonu</th>
+            <th>Akcja</th>
         </tr>
     </thead>
 
@@ -19,6 +20,11 @@
             <td>{{ contact.surname }}</td>
             <td>{{ contact.firstName }}</td>
             <td>{{ contact.phoneNumber }}</td>
+            <td>
+                <button (click)="removeContact(contact, $event)" mat-mini-fab color="warn">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
         </tr>
     </tbody>
 

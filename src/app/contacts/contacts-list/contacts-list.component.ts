@@ -22,4 +22,14 @@ export class ContactsListComponent implements OnInit {
       .getContacts()
       .subscribe((contacts) => (this.contacts = contacts));
   }
+
+  removeContact(contact: ContactModel, event: Event) {
+    event.stopPropagation();
+    const conf = confirm('Usunac ten kontakt?');
+    if (conf) {
+      this.contactsService
+        .removeContact(contact.id)
+        .subscribe(() => this.loadContacts());
+    }
+  }
 }
