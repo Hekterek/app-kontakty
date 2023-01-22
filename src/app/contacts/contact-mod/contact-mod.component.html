@@ -19,7 +19,8 @@
 
 <button [routerLink]="['/contacts']" mat-button color="primary">Wstecz</button>
 <button (click)="contactForm.reset()" mat-button color="accent">Wyczysc</button>
-<button (click)="updateContact()" [disabled]="contactForm.invalid" mat-button color="accent">Zapisz</button>
+<button (click)="updateContact()" [disabled]="contactForm.invalid || this.compareData()" mat-button
+    color="accent">Zapisz</button>
 
 <pre>{{ contactForm.value | json }}</pre>
 <pre>{{ contactForm.status | json }}</pre>

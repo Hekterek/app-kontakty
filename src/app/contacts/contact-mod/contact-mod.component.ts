@@ -25,6 +25,7 @@ export class ContactModComponent {
     console.log(this.contact);
     this.buildContactForm();
     this.addDataToForm();
+    this.compareData();
   }
   // model logiczny formularza
   private buildContactForm() {
@@ -61,5 +62,20 @@ export class ContactModComponent {
       firstName: this.contact[0].firstName,
       phoneNumber: this.contact[0].phoneNumber,
     });
+  }
+
+  compareData() {
+    const dataFromForm = this.contactForm.value;
+    const dataFromSrv = this.contact[0];
+    delete dataFromSrv.id;
+
+    // console.log(dataFromForm);
+    // console.log(dataFromSrv);
+
+    if (JSON.stringify(dataFromForm) === JSON.stringify(dataFromSrv)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
