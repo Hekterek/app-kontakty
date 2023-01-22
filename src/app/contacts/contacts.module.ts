@@ -9,12 +9,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { ContactAddComponent } from './contact-add/contact-add.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactModComponent } from './contact-mod/contact-mod.component';
 
 @NgModule({
   declarations: [
     ContactsListComponent,
     ContactDetailsComponent,
     ContactAddComponent,
+    ContactModComponent,
   ],
   imports: [
     CommonModule,

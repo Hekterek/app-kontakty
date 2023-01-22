@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 // import { CONTACTS } from 'src/app/data/contacts-data';
 import { ContactModel } from 'src/app/models/ContactModel';
 import { ContactsService } from '../contacts.service';
@@ -11,7 +12,10 @@ import { ContactsService } from '../contacts.service';
 export class ContactsListComponent implements OnInit {
   contacts: ContactModel[] = [];
 
-  constructor(private contactsService: ContactsService) {}
+  constructor(
+    private contactsService: ContactsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadContacts();
@@ -31,5 +35,10 @@ export class ContactsListComponent implements OnInit {
         .removeContact(contact.id)
         .subscribe(() => this.loadContacts());
     }
+  }
+
+  goToContactDetails(contact: ContactModel, event: Event) {
+    event.stopPropagation();
+    this.router.navigate(['/contact-mod', contact.id]);
   }
 }

@@ -21,6 +21,9 @@
             <td>{{ contact.firstName }}</td>
             <td>{{ contact.phoneNumber }}</td>
             <td>
+                <button (click)="goToContactDetails(contact, $event)" mat-mini-fab color="accent">
+                    <mat-icon>edit</mat-icon>
+                </button>
                 <button (click)="removeContact(contact, $event)" mat-mini-fab color="warn">
                     <mat-icon>delete</mat-icon>
                 </button>
