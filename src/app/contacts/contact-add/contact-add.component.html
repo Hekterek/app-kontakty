@@ -1,0 +1,24 @@
+<app-header>
+    <span content>Dodawanie nowego kontaktu</span>
+</app-header>
+
+<form [formGroup]="contactForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>Nazwisko</mat-label>
+        <input formControlName="surname" matInput placeholder="Podaj nazwisko">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Imie</mat-label>
+        <input formControlName="firstName" matInput placeholder="Podaj imie">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Telefon</mat-label>
+        <input formControlName="phoneNumber" matInput placeholder="Podaj num telefonu">
+    </mat-form-field>
+</form>
+
+<button [routerLink]="['/contacts']" mat-button color="primary">Wstecz</button>
+<button mat-button color="accent">Zapisz</button>
+
+<pre>{{ contactForm.value | json }}</pre>
+<pre>{{ contactForm.status | json }}</pre>
