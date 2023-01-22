@@ -2,6 +2,8 @@
     <span content>Szczegoly wybranego kontaktu</span>
 </app-header>
 
-<p>contact-details works!</p>
+<p>Nazwisko: {{contactDetails.surname}}</p>
+<p>Imie: {{contactDetails.firstName}}</p>
+<p>telefon: {{contactDetails.phoneNumber}}</p>
 
 <button [routerLink]="['/contacts']" type="button" class="btn btn-secondary">Wstecz</button>
